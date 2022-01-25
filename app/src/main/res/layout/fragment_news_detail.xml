@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.bughowi.viralin.ui.NewsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        style="@style/CardViewNewsList"
+        android:padding="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_category_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            app:cardBackgroundColor="#188DE9"
+            app:cardCornerRadius="4dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_category_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nobile"
+                android:padding="5dp"
+                android:text="@{viewModel.category}"
+                style="@style/TextBasedWhite"
+                android:textSize="12sp"
+                tools:ignore="TextContrastCheck"
+                tools:text="Business" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_published_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo"
+            style="@style/TextBasedBlack"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/card_category_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/card_category_label"
+            android:text="@{viewModel.article.publishedAt}"
+            tools:text="10 January 2022" />
+
+        <TextView
+            android:id="@+id/tv_news_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/lato"
+            style="@style/TextBasedBlack"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_category_label"
+            android:text="@{viewModel.article.title}"
+            tools:text="Revealed: The cities with the highest quality of life in the" />
+
+        <TextView
+            android:id="@+id/tv_news_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/nobile"
+            style="@style/TextBasedBlack"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_news_title"
+            android:text="@{viewModel.article.author}"
+            tools:text="Rudolf Kandinsky" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_news_thumbnail"
+            android:layout_width="0dp"
+            android:layout_height="211dp"
+            android:layout_marginTop="4dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_news_author">
+
+            <ImageView
+                android:id="@+id/image_news_thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/news_thumbnail"
+                android:scaleType="centerCrop"
+                tools:srcCompat="@drawable/business" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_news_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/nobile"
+            android:lineSpacingExtra="8sp"
+            style="@style/TextBasedBlack"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_news_thumbnail"
+            android:text="@{viewModel.article.content}"
+            tools:text="London has slipped down a list of the best cities in the world for quality of life for a third year running because of “persistent air pollution and traffic congestion”.\n\nThe capital placed 41st in the 20th annual Mercer Quality of Life survey. The city was 40th last year but was nudged down one place in the latest rankings by the French city of Lyon and placed 39th in 2016.\n\nKate Fitzpatrick, Mercer's Global Mobility Practice Leader for the UK and Ireland, said: " />
+
+        <Button
+            android:id="@+id/button_full_news"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/view_full_news"
+            style="@style/Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

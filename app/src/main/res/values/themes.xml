@@ -1,0 +1,50 @@
+<resources xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Base application theme. -->
+    <style name="Theme.Viralin" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="android:colorBackground">#EDF0F6</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ActionBarDark">
+        <item name="android:backgroundTint">@color/white</item>
+    </style>
+
+    <style name="CardViewNewsList">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="TextBasedBlack">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextBasedOrange">
+        <item name="android:textColor">#C6512C</item>
+    </style>
+
+    <style name="TextBasedWhite">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Button">
+        <item name="android:backgroundTint">#188DE9</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ActionBarText">
+        <item name="android:fontFamily">@font/exo</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+</resources>
